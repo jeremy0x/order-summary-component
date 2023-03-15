@@ -1,0 +1,200 @@
+@charset 'UTF+8';
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  --hover-state: hsl(252.41, 82.86%, 65.69%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--pale-blue);
+  background-image: url('../images/pattern-background-mobile.svg');
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url('../images/pattern-background-desktop.svg');
+  }
+}
+
+.container {
+  padding: 1.5rem;
+
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  max-width: 400px;
+  margin-inline: auto;
+
+  border-radius: 20px;
+  background-color: var(--very-pale-blue);
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.card__banner img {
+  max-width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card__body {
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .card__body {
+    padding: 2.5rem;
+  }
+}
+
+.card__header {
+  text-align: center;
+}
+
+.card__title {
+  color: var(--dark-blue);
+  font-size: 1.45rem;
+  font-weight: 900;
+  margin-bottom: 1.4rem;
+}
+
+.card__description {
+  color: var(--desaturated-blue);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding-inline: 0.75rem;
+}
+
+.card__info,
+.card-info__left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card__info {
+  padding: 1rem;
+  margin-block: 1.5rem;
+  border-radius: 15px;
+  justify-content: space-between;
+  background-color: hsl(235, 100%, 97%);
+}
+
+.card-info__left {
+  justify-content: flex-start;
+}
+
+.card-info__left__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.2rem;
+}
+
+.card-info__left__details .plan-name {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--dark-blue);
+}
+
+.card-info__left__details .plan-price {
+  font-size: 0.85rem;
+  color: var(--desaturated-blue);
+}
+
+.card-info__right {
+  font-size: 0.85rem;
+  color: var(--bright-blue);
+  font-weight: 700;
+}
+
+.card-info__right a:hover {
+  color: var(--hover-state);
+  text-decoration: none;
+}
+
+.card__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cta__proceed,
+.cta__cancel {
+  border: none;
+  border-radius: 15px;
+
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: inherit;
+
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.cta__proceed {
+  color: var(--very-pale-blue);
+  padding-block: 1rem;
+  background-color: var(--bright-blue);
+  box-shadow: hsla(245, 75%, 52%, 0.2) 0px 20px 25px -5px,
+    hsla(245, 75%, 52%, 0.05) 0px 10px 10px -5px;
+}
+
+.cta__proceed:hover {
+  background-color: var(--hover-state);
+}
+
+.cta__cancel {
+  background-color: transparent;
+  color: var(--desaturated-blue);
+  width: fit-content;
+  width: -moz-fit-content;
+  margin: 1rem auto 0.75rem auto;
+}
+
+.cta__cancel:hover {
+  color: var(--dark-blue);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-block: 0.2rem;
+  background-color: var(--pale-blue);
+  border-top: thin solid hsla(229, 6%, 66%, 0.2);
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.attribution a {
+  color: var(--dark-blue);
+}
